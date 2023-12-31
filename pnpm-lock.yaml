@@ -12,7 +12,7 @@ dependencies:
     specifier: ^5.7.1
     version: 5.7.1(prisma@5.7.1)
   cloudinary:
-    specifier: ^1.41.0
+    specifier: ^1.41.1
     version: 1.41.1
   mongodb:
     specifier: ^6.3.0

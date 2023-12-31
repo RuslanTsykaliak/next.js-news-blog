@@ -1,4 +1,4 @@
-2 | 1:18
+6 | 3:57
 
 pnpm i
 
@@ -36,6 +36,12 @@ GOOGLE_CLIENT_SECRET=
 NEXTAUTH_SECRET=
 
 DATABASE_URL
+
+NODE_ENV=
+
+NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
 
 # Database Prisma
 https://www.prisma.io/docs/orm/more/help-and-troubleshooting/help-articles/nextjs-prisma-client-dev-practices
@@ -75,3 +81,13 @@ generator client {
   provider        = "prisma-client-js"
   binaryTargets   = ["native", "darwin"]
 }
+
+# Cloudinary
+
+https://cloudinary.com/
+
+pnpm i next-cloudinary cloudinary
+
+
+Create Post form:
+- add formating to the text with borders, links. etc.
