@@ -33,15 +33,16 @@ GITHUB_CLIENT_SECRET=
 GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
 
+NEXTAUTH_URL=http://localhost:3000
 NEXTAUTH_SECRET=
 
-DATABASE_URL
+DATABASE_URL=
 
-NODE_ENV=
-
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
 NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET=
 CLOUDINARY_API_KEY=
 CLOUDINARY_API_SECRET=
+
 
 # Database Prisma
 https://www.prisma.io/docs/orm/more/help-and-troubleshooting/help-articles/nextjs-prisma-client-dev-practices
@@ -89,5 +90,28 @@ https://cloudinary.com/
 pnpm i next-cloudinary cloudinary
 
 
-Create Post form:
-- add formating to the text with borders, links. etc.
+# Improve
+
+- Allow multiple spaces and paragraphs in the text content to preserve line breaks and spaces entered by a user.
+
+Tried options:
+
+CreatePostForm.tsx
+1.
+<!-- className="border border-gray-300 p-2 min-h-20 break-words whitespace-pre-line" -->
+      
+
+2.
+<!-- <div dangerouslySetInnerHTML={{ __html: content }}></div> -->
+
+Post.tsx
+3. 
+<!-- <div dangerouslySetInnerHTML={{ __html: content }} className="content"></div> -->
+
+4. Work with small view space:
+<!-- <textarea className="content" readOnly value={content}></textarea>  -->
+
+5. Work perfectly:
+<!-- <div className="content whitespace-pre-line">{content}</div>
+or
+<p></p> -->

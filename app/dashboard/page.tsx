@@ -43,7 +43,7 @@ export default async function Dashboard() {
             thumbnail={post.imageUrl}
             category={post.catName}
             title={post.title}
-            content={post.content}
+            content={post.content} 
             links={post.links || []}
           />
         ))

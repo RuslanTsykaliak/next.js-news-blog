@@ -81,7 +81,10 @@ export default async function Post({
       )}
 
       <h2>{title}</h2>
-      <p className="content">{content}</p>
+      <p className="content whitespace-pre-line">{content}</p>
+
+
+
 
       {links && (
         <div className="my-4 flex flex-col gap-3">

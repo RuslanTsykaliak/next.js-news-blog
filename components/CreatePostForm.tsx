@@ -116,19 +116,7 @@ export default function CreatePostForm() {
     <div>
       <h2>Create Post</h2>
       <form onSubmit={handleSubmit} className="flex flex-col gap-2">
-        {/* <input
-          onChange={(e) => setTitle(e.target.value)}
-          type="text"
-          placeholder="Title"
-          value={title}
-          className="border p-2 mb-2"
-        />
-        <textarea
-          onChange={(e) => setContent(e.target.value)}
-          placeholder="Content"
-          value={content}
-          className="bordear p-2"
-        ></textarea> */}
+        {/* Original */}
         <input
           onChange={(e) => setTitle(e.target.value)}
           type="text"
