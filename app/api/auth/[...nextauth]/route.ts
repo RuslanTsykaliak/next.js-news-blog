@@ -1,4 +1,4 @@
-// 5 ssplit the code into two files: authOptions.ts and route.ts.
+// 5 split the code into two files: authOptions.ts and route.ts.
 // Fixed: Type error: Route "app/api/auth/[...nextauth]/route.ts" does not match the required types of a Next.js Route.
   // "authOptions" is not a valid Route export field.
 

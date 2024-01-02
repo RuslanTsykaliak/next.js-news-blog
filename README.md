@@ -2,23 +2,126 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/RuslanTsykaliak/next.js-news-blog your-folder
+```
+
+```bash
+pnpm i
+```
+
+```bash
+pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Icons
+
+Explore and use icons from [Heroicons](https://heroicons.com/).
+
+## Libraries
+
+Install the following libraries using pnpm:
+
+```bash
+pnpm i next-auth
+pnpm i next-cloudinary@latest  // next-cloudinary 5.16.0
+```
+
+## Authentication Set up with NextAuth
+
+1. **GitHub:**
+   - Register a new application with GitHub on [GitHub Apps](https://github.com/settings/applications/new).
+   - Authorization callback URL should end with "api/auth/callback/github".
+
+2. **Google:**
+   - Follow the instructions at [NextAuth Google Provider](https://next-auth.js.org/providers/google).
+   - Create credentials at [Google Developer Console](https://console.developers.google.com/apis/credentials).
+
+After deployment, update the following URLs in the configuration.
+
+## Environment Variables (.env)
+
+```env
+GITHUB_CLIENT_ID=
+GITHUB_CLIENT_SECRET=
+
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=
+
+DATABASE_URL=
+
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
+NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+```
+
+## Database Setup with Prisma
+
+1. Install Prisma:
+
+   ```bash
+   pnpm i -D prisma
+   pnpm i @prisma/client
+   pnpm i @auth/prisma-adapter
+   ```
+
+2. Initialize Prisma:
+
+   ```bash
+   npx prisma init
+   ```
+
+3. MongoDB Setup:
+
+   - Create a new project on [MongoDB Cloud](https://cloud.mongodb.com/).
+   - Obtain Username and Password.
+   - Configure IP Address to "0.0.0.0/0" for connection.
+   - Install MongoDB Driver:
+
+     ```bash
+     pnpm i mongodb
+     ```
+
+   - Copy the database connection string, add the password and the name of the database after `mongodb.net/`.
+   - Generate Prisma client and push the database:
+
+     ```bash
+     npx prisma generate
+     npx prisma db push
+     ```
+
+   - Access the database collections using:
+
+     ```bash
+     npx prisma studio
+     ```
+
+   - For M1 chips, add the following to `prisma/schema.prisma` to support binaryTargets:
+
+     ```prisma
+     generator client {
+       provider        = "prisma-client-js"
+       binaryTargets   = ["native", "darwin"]
+     }
+     ```
+
+## Cloudinary Setup
+
+1. Sign up or log in to [Cloudinary](https://cloudinary.com/).
+2. Install Cloudinary dependencies:
+
+   ```bash
+   pnpm i next-cloudinary cloudinary
+   ```
+
 
 ## Learn More
 
