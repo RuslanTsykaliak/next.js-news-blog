@@ -22,14 +22,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 Explore and use icons from [Heroicons](https://heroicons.com/).
 
-## Libraries
-
-Install the following libraries using pnpm:
-
-```bash
-pnpm i next-auth
-pnpm i next-cloudinary@latest  // next-cloudinary 5.16.0
-```
 
 ## Authentication Set up with NextAuth
 
