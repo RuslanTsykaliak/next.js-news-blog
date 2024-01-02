@@ -128,3 +128,35 @@ export { handler as GET, handler as POST };
 // pnpm i --save-dev typescript ts-loader
 
 
+// 5 @auth/prisma-adapter replace with @next-auth/prisma-adapter
+
+
+// import NextAuth, { AuthOptions } from "next-auth";
+// import GitHubProvider from "next-auth/providers/github";
+// import GoogleProvider from "next-auth/providers/google";
+// import { PrismaAdapter } from "@next-auth/prisma-adapter";
+
+// import prisma from "@/lib/prismadb";
+
+// export const authOptions: AuthOptions = {
+//   adapter: PrismaAdapter(prisma),
+//   providers: [
+//     GitHubProvider({
+//       clientId: process.env.GITHUB_CLIENT_ID as string,
+//       clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
+//     }),
+//     GoogleProvider({
+//       clientId: process.env.GOOGLE_CLIENT_ID as string,
+//       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+//     }),
+//   ],
+//   pages: {
+//     signIn: "/sign-in",
+//   },
+//   secret: process.env.NEXTAUTH_SECRET,
+// };
+
+// const handler = NextAuth(authOptions);
+
+// export { handler as GET, handler as POST };
+
