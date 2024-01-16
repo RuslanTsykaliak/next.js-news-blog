@@ -3,6 +3,8 @@ import Link from "next/link";
 import DeleteButton from "./DeleteButton";
 import { getServerSession } from "next-auth/next";
 import authOptions from "@/app/api/auth/[...nextauth]/authOptions";
+import { Skeleton } from "./ui/skeleton";
+import { Card } from "./ui/card";
 
 interface PostProps {
   id: string;
@@ -41,6 +43,8 @@ export default async function Post({
   const formattedDate = dateObject.toLocaleDateString("en-US", options);
 
   return (
+    // <Card mb={4} p={8} border="1px solid #e0e0e0" borderRadius="md">
+
     <div className="my-4 border-b border-b-300 py-8">
       <div className="mb-4">
         {author ? (
@@ -80,10 +84,15 @@ export default async function Post({
         </Link>
       )}
 
-      <h2>{title}</h2>
-      <p className="content whitespace-pre-line">{content}</p>
+      {/* <article className="my-2 border-b border-gray-300 py-2">
+        <h1 className="text-2xl font-bold mb-4">{title}</h1>
+        <p className="whitespace-pre-line my-2 text-lg">{content}</p>
+      </article> */}
 
-
+      <article className="prose max-w-none my-4">
+        <h1 className="text-3xl font-bold mb-4 tracking-tight text-gray-900">{title}</h1>
+        <p className="whitespace-pre-line text-lg leading-relaxed">{content}</p>
+      </article>
 
 
       {links && (
@@ -120,5 +129,6 @@ export default async function Post({
         </div>
       )}
     </div>
+
   );
 }

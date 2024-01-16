@@ -1,6 +1,7 @@
 import CategoriesList from "@/components/CategoriesList";
 import Post from "@/components/Post";
 import { TPost } from "./types";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const getPosts = async (): Promise<TPost[] | null> => {
   try {
@@ -23,25 +24,26 @@ export default async function Home() {
   const posts = await getPosts();
   return (
     <>
-      <CategoriesList />
-      {posts && posts.length > 0 ? (
-        posts.map((post: TPost) => (
-          <Post
-            key={post.id}
-            id={post.id}
-            author={post.author.name}
-            authorEmail={post.authorEmail}
-            date={post.createdAt}
-            thumbnail={post.imageUrl}
-            category={post.catName}
-            title={post.title}
-            content={post.content}
-            links={post.links || []}
-          />
-        ))
-      ) : (
-        <div className="py-6">No posts to display</div>
-      )}
+        <CategoriesList />
+        {posts && posts.length > 0 ? (
+          posts.map((post: TPost) => (
+            <Post
+
+              key={post.id}
+              id={post.id}
+              author={post.author.name}
+              authorEmail={post.authorEmail}
+              date={post.createdAt}
+              thumbnail={post.imageUrl}
+              category={post.catName}
+              title={post.title}
+              content={post.content}
+              links={post.links || []}
+            />
+            ))
+            ) : (
+              <div className="py-6">No posts to display</div>
+              )}
     </>
   );
 }
