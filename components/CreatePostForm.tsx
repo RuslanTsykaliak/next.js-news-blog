@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { CldUploadButton, CldUploadWidgetResults } from "next-cloudinary";
 import Image from "next/image";
 import toast from "react-hot-toast";
+import { Textarea } from "./ui/textarea";
 
 export default function CreatePostForm() {
   const [links, setLinks] = useState<string[]>([]);
@@ -122,10 +123,11 @@ export default function CreatePostForm() {
           type="text"
           placeholder="Title"
         />
-        <textarea
+        <Textarea
+        //  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500"
           onChange={(e) => setContent(e.target.value)}
           placeholder="Content"
-        ></textarea>
+        ></Textarea>
 
         {links &&
           links.map((link, i) => (

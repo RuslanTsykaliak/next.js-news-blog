@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { CldUploadButton, CldUploadWidgetResults } from "next-cloudinary";
 import Image from "next/image";
 import toast from "react-hot-toast";
+import { Textarea } from "./ui/textarea";
 
 export default function EditPostForm({ post }: { post: TPost }) {
   const [links, setLinks] = useState<string[]>([]);
@@ -137,11 +138,11 @@ export default function EditPostForm({ post }: { post: TPost }) {
           placeholder="Title"
           value={title}
         />
-        <textarea
+        <Textarea
           onChange={(e) => setContent(e.target.value)}
           placeholder="Content"
           value={content}
-        ></textarea>
+        ></Textarea>
 
         {links &&
           links.map((link, i) => (
