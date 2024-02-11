@@ -3,4 +3,4 @@
 - Text Editor
 - Replace API with Actions
 - Add useOptimistic
-- Remove need for the URL
+- Remove the need for the URL
