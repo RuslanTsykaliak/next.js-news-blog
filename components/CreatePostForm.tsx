@@ -1,12 +1,13 @@
 "use client";
 
-import { TCategory } from "@/app/types";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { CldUploadButton, CldUploadWidgetResults } from "next-cloudinary";
 import Image from "next/image";
 import toast from "react-hot-toast";
+
+import { TCategory } from "@/app/types";
 import { Textarea } from "./ui/textarea";
 
 export default function CreatePostForm() {
@@ -124,7 +125,7 @@ export default function CreatePostForm() {
           placeholder="Title"
         />
         <Textarea
-        //  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500"
+          //  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500"
           onChange={(e) => setContent(e.target.value)}
           placeholder="Content"
         ></Textarea>
